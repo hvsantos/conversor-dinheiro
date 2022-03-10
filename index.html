@@ -9,11 +9,31 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1 class="main-title">Conversor de Dinheiro</h1>
-    <h2 class="main-subtitle">Converta os valores de uma moeda para a outra</h2>
-    <div class="container-imersao">
-      <h2 class="main-subtitle -imersao">imersão</h2>
-      <h2 class="main-subtitle -dev">dev&#95;</h2>
+    <div class="main-wrapper">
+      <h1 class="main-title">Conversor de Dinheiro</h1>
+      <h2 class="main-subtitle">
+        Converta os valores de real para a moeda selecionada
+      </h2>
+      <div class="container-imersao">
+        <h2 class="main-subtitle -imersao">imersão</h2>
+        <h2 class="main-subtitle -dev">dev&#95;</h2>
+      </div>
+      <form class="wrapper-form">
+        <select
+          class="currency-select main-subtitle -form"
+          name="Selecione a moeda"
+        >
+          <option value="dolar">Dólar</option>
+          <option value="euro">Euro</option>
+          <option value="bitcoin">BitCoin</option>
+        </select>
+        <input class="main-subtitle -form" type="text" />
+        <button class="main-button main-subtitle -button">Converter!</button>
+      </form>
     </div>
+    <div class="wrapper-result">
+      <h1 class="main-title">O resultado foi de:::</h1>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
