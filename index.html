@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/components/container-imersaodev.css" />
-    <link rel="stylesheet" href="css/components/container-result.css" />
     <link rel="stylesheet" href="css/components/container-select.css" />
     <link rel="stylesheet" href="css/components/main-button.css" />
     <link rel="stylesheet" href="css/components/main-subtitle.css" />
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="css/components/wrapper-form.css" />
   </head>
   <body>
-    <div class="main-wrapper">
+    <section class="main-wrapper">
       <h1 class="main-title">Conversor de Dinheiro</h1>
       <h2 class="main-subtitle">
         Converta os valores de real para a moeda selecionada
@@ -27,30 +26,43 @@
         <h2 class="main-subtitle -dev">dev&#95;</h2>
       </div>
       <form class="wrapper-form">
-        <div class="container-select">
-          <select id="select-left" class="main-subtitle -form" name="select">
-            <option value="dolar">Dólar</option>
-            <option value="euro">Euro</option>
-            <option value="bitcoin">BitCoin</option>
-          </select>
-          <h2 class="main-subtitle">=</h2>
-          <select
-            id="select-right"
-            class="select-left main-subtitle -form"
-            name="select"
-          >
-            <option value="dolar">Dólar</option>
-            <option value="euro">Euro</option>
-            <option value="bitcoin">BitCoin</option>
-          </select>
+        <div class="container-prebutton">
+          <div class="container-select">
+            <input
+              id="input-left"
+              class="main-subtitle -form inputvalue"
+              type="text"
+            />
+            <select id="select-left" class="main-subtitle -form" name="select">
+              <option value="real">Real</option>
+              <option value="dolar">Dólar</option>
+              <option value="euro">Euro</option>
+              <option value="bitcoin">BitCoin</option>
+            </select>
+          </div>
+          <h2 class="main-title">=</h2>
+          <div class="container-select">
+            <input
+              id="input-right"
+              class="main-subtitle -form inputvalue"
+              type="text"
+              readonly
+            />
+            <select
+              id="select-right"
+              class="select-left main-subtitle -form"
+              name="select"
+            >
+              <option value="real">Real</option>
+              <option value="dolar">Dólar</option>
+              <option value="euro">Euro</option>
+              <option value="bitcoin">BitCoin</option>
+            </select>
+          </div>
         </div>
-        <input class="inputvalor main-subtitle -form" type="text" />
         <button class="main-button main-subtitle">Converter!</button>
       </form>
-    </div>
-    <div class="container-result">
-      <h1 id="answer" class="main-title -answer"></h1>
-    </div>
+    </section>
     <script src="js/values.js"></script>
     <script src="js/main.js"></script>
   </body>
