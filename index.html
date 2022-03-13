@@ -7,6 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/components/container-imersaodev.css" />
+    <link rel="stylesheet" href="css/components/container-result.css" />
+    <link rel="stylesheet" href="css/components/container-select.css" />
+    <link rel="stylesheet" href="css/components/main-button.css" />
+    <link rel="stylesheet" href="css/components/main-subtitle.css" />
+    <link rel="stylesheet" href="css/components/main-title.css" />
+    <link rel="stylesheet" href="css/components/main-wrapper.css" />
+    <link rel="stylesheet" href="css/components/wrapper-form.css" />
   </head>
   <body>
     <div class="main-wrapper">
@@ -14,22 +22,30 @@
       <h2 class="main-subtitle">
         Converta os valores de real para a moeda selecionada
       </h2>
-      <div class="container-imersao">
+      <div class="container-imersaodev">
         <h2 class="main-subtitle -imersao">imersão</h2>
         <h2 class="main-subtitle -dev">dev&#95;</h2>
       </div>
       <form class="wrapper-form">
-        <select class="currency-select main-subtitle -form" name="select">
-          <option value="dolar">Dólar</option>
-          <option value="euro">Euro</option>
-          <option value="bitcoin">BitCoin</option>
-        </select>
+        <div class="container-select">
+          <select class="select-left main-subtitle -form" name="select">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="bitcoin">BitCoin</option>
+          </select>
+          <h2 class="main-subtitle">=</h2>
+          <select class="select-left main-subtitle -form" name="select">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="bitcoin">BitCoin</option>
+          </select>
+        </div>
         <input class="inputvalor main-subtitle -form" type="text" />
-        <button class="main-button main-subtitle -button">Converter!</button>
+        <button class="main-button main-subtitle">Converter!</button>
       </form>
     </div>
-    <div class="wrapper-result">
-      <h1 class="main-title answer"></h1>
+    <div class="container-result">
+      <h1 id="answer" class="main-title -answer"></h1>
     </div>
     <script src="js/values.js"></script>
     <script src="js/main.js"></script>
