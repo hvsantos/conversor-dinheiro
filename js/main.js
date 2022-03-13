@@ -30,9 +30,6 @@ function clickButton(event) {
   }
 }
 
-let symbolR = ''
-let symbolL = ''
-
 function convertIt(selectR, value, symbolL) {
   let input_right = document.querySelector('#input-right')
   if (selectR == 'real') {
@@ -72,4 +69,9 @@ function valueToReal() {
     console.log(valueRealtoBitcoin)
     return valueRealtoBitcoin
   }
+}
+
+function selectAll() {
+  input_left.focus()
+  input_left.select()
 }
