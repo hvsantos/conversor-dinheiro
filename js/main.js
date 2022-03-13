@@ -1,12 +1,16 @@
-const $selection = document.querySelector('.currency-select')
+const select_left = document.querySelector('#select-left')
+const select_right = document.querySelector('#select-right')
+
 const $button = document.querySelector('.main-button')
-const $input = document.querySelector('.inputvalor')
-const $answer = document.querySelector('.answer')
 $button.addEventListener('click', clickButton)
+
+const $input = document.querySelector('.inputvalor')
+const $answer = document.querySelector('#answer')
+
 function clickButton(event) {
   event.preventDefault()
   let valueInsert = $input.value
-  let option = $selection.value
+  let option = select_left.value
   let checknumber = Number(valueInsert)
   let resultFinal = 0
   if (option == 'dolar' && valueInsert != '' && checknumber) {
