@@ -1,0 +1,10 @@
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #071330;
+}
+.main-title.-answer {
+  font-size: 1.7rem;
+}

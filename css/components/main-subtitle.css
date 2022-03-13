@@ -1,0 +1,24 @@
+.main-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #071330;
+}
+.main-subtitle.-imersao {
+  font-size: 2.2rem;
+  margin-right: 0.5rem;
+  font-weight: 400;
+}
+.main-subtitle.-dev {
+  font-size: 2.2rem;
+  font-weight: 400;
+  background-color: #fbdd00;
+  padding-bottom: 6px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.main-subtitle.-form {
+  font-size: 1.2rem;
+  text-align: center;
+}
