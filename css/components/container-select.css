@@ -1,6 +1,9 @@
 .container-select {
   display: flex;
   align-items: center;
-  flex-direction: row;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.container-select .inputvalue {
+  width: 10rem;
 }
