@@ -1,15 +1,15 @@
 const select_left = document.querySelector('#select-left')
 const select_right = document.querySelector('#select-right')
 
+const input_left = document.querySelector('#input-left')
+const input_right = document.querySelector('#input-right')
+
 const $button = document.querySelector('.main-button')
 $button.addEventListener('click', clickButton)
 
-const $input = document.querySelector('.inputvalor')
-const $answer = document.querySelector('#answer')
-
 function clickButton(event) {
   event.preventDefault()
-  let valueInsert = $input.value
+  let valueInsert = input_left.value
   let option = select_left.value
   let checknumber = Number(valueInsert)
   let resultFinal = 0
