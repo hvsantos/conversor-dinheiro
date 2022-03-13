@@ -1,43 +1,75 @@
 const select_left = document.querySelector('#select-left')
 const select_right = document.querySelector('#select-right')
 
-const input_left = document.querySelector('#input-left')
-const input_right = document.querySelector('#input-right')
-
 const $button = document.querySelector('.main-button')
 $button.addEventListener('click', clickButton)
 
+const fail_text = document.querySelector('#fail-text')
+const input_left = document.querySelector('#input-left')
+
 function clickButton(event) {
   event.preventDefault()
-  let valueInsert = input_left.value
-  let option = select_left.value
-  let checknumber = Number(valueInsert)
-  let resultFinal = 0
-  if (option == 'dolar' && valueInsert != '' && checknumber) {
-    resultFinal = valueInsert * 0.2
-    $answer.textContent =
-      'A conversao de R$' +
-      valueInsert +
-      '  é equivalente à $' +
-      resultFinal +
-      ' USD'
-  } else if (option == 'euro' && valueInsert != '' && checknumber) {
-    resultFinal = valueInsert * 0.18
-    $answer.textContent =
-      'A conversao de R$' +
-      valueInsert +
-      ' é equivalente à €' +
-      resultFinal +
-      ' EUR'
-  } else if (option == 'bitcoin' && valueInsert != '' && checknumber) {
-    resultFinal = valueInsert * 0.0000049
-    $answer.textContent =
-      'A conversao de R$' +
-      valueInsert +
-      ' é equivalente à ' +
-      resultFinal +
-      ' BTC'
+  fail_text.textContent = ''
+  let inputValue = 0
+  if (input_left.value.includes(',')) {
+    inputValue = input_left.value.replace(/,/i, '.')
   } else {
-    $answer.textContent = 'Favor digitar um valor válido'
+    inputValue = input_left.value
+  }
+  let valueInsert = Number(inputValue)
+  if (select_left.value == 'real' && valueInsert) {
+    convertIt(select_right.value, valueInsert, 'R$')
+  } else if (select_left.value == 'dolar' && valueInsert) {
+    convertIt(select_right.value, valueInsert, 'U$')
+  } else if (select_left.value == 'euro' && valueInsert) {
+    convertIt(select_right.value, valueInsert, '€')
+  } else if (select_left.value == 'bitcoin' && valueInsert) {
+    convertIt(select_right.value, valueInsert, 'BTC')
+  } else {
+    fail_text.textContent = 'Favor digitar um valor válido'
+  }
+}
+
+let symbolR = ''
+let symbolL = ''
+
+function convertIt(selectR, value, symbolL) {
+  let input_right = document.querySelector('#input-right')
+  if (selectR == 'real') {
+    finalValue = value / valueToReal()
+    finalValue = finalValue.toFixed(2)
+    symbolR = 'R$'
+  } else if (selectR == 'dolar') {
+    finalValue = value / valueDollar
+    finalValue = finalValue.toFixed(2)
+    symbolR = 'U$'
+  } else if (selectR == 'euro') {
+    finalValue = value / valueEuro
+    finalValue = finalValue.toFixed(2)
+    symbolR = '€'
+  } else if (selectR == 'bitcoin') {
+    finalValue = value / valueBitcoin
+    finalValue = finalValue.toFixed(7)
+    symbolR = 'BTC'
+  } else {
+    fail_text.textContent =
+      'Erro inesperado, não foi possível reconhecer a opção de conversão'
+  }
+  input_right.value = `${symbolR} ${finalValue}`
+  input_left.value = `${symbolL} ${value}`
+}
+
+function valueToReal() {
+  if (select_left.value == 'real') {
+    return 1
+  } else if (select_left.value == 'dolar') {
+    console.log(valueRealtoDollar)
+    return valueRealtoDollar
+  } else if (select_left.value == 'euro') {
+    console.log(valueRealtoEuro)
+    return valueRealtoEuro
+  } else if (select_left.value == 'bitcoin') {
+    console.log(valueRealtoBitcoin)
+    return valueRealtoBitcoin
   }
 }
