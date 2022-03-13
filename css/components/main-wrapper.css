@@ -3,4 +3,5 @@
   align-items: center;
   flex-direction: column;
   padding-top: 3rem;
+  gap: 2rem;
 }
