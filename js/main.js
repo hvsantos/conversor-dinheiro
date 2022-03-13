@@ -52,8 +52,11 @@ function convertIt(selectR, value, symbolL) {
     fail_text.textContent =
       'Erro inesperado, não foi possível reconhecer a opção de conversão'
   }
-  input_right.value = `${symbolR} ${finalValue}`
-  input_left.value = `${symbolL} ${value}`
+
+  input_left.value = value
+  input_right.value = finalValue
+  document.querySelector('#symbol-left').innerHTML = symbolL
+  document.querySelector('#symbol-right').innerHTML = symbolR
 }
 
 function valueToReal() {

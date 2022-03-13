@@ -29,13 +29,22 @@
       <form class="wrapper-form">
         <div class="container-prebutton">
           <div class="container-select">
-            <input
-              id="input-left"
-              class="main-subtitle -form inputvalue"
-              type="text"
-              onclick="selectAll()"
-            />
-            <select id="select-left" class="main-subtitle -form" name="select">
+            <div>
+              <label id="symbol-left" class="main-subtitle labelSymbol"
+                >R$</label
+              >
+              <input
+                id="input-left"
+                class="main-subtitle -form inputvalue"
+                type="text"
+                onclick="selectAll()"
+              />
+            </div>
+            <select
+              id="select-left"
+              class="main-subtitle -form selectbox"
+              name="select"
+            >
               <option value="real">Real</option>
               <option value="dolar">Dólar</option>
               <option value="euro">Euro</option>
@@ -44,15 +53,20 @@
           </div>
           <h2 class="main-title">=</h2>
           <div class="container-select">
-            <input
-              id="input-right"
-              class="main-subtitle -form inputvalue"
-              type="text"
-              readonly
-            />
+            <div>
+              <label id="symbol-right" class="main-subtitle labelSymbol"
+                >R$</label
+              >
+              <input
+                id="input-right"
+                class="main-subtitle -form inputvalue"
+                type="text"
+                readonly
+              />
+            </div>
             <select
               id="select-right"
-              class="select-left main-subtitle -form"
+              class="select-left main-subtitle -form selectbox"
               name="select"
             >
               <option value="real">Real</option>
