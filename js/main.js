@@ -14,17 +14,17 @@ function clickButton(event) {
     $answer.textContent =
       'A conversao de R$' +
       valueInsert +
-      '  é equivalente à ' +
+      '  é equivalente à $' +
       resultFinal +
-      ' Dolares'
+      ' USD'
   } else if (option == 'euro' && valueInsert != '' && checknumber) {
     resultFinal = valueInsert * 0.18
     $answer.textContent =
       'A conversao de R$' +
       valueInsert +
-      ' é equivalente à ' +
+      ' é equivalente à €' +
       resultFinal +
-      ' Euros'
+      ' EUR'
   } else if (option == 'bitcoin' && valueInsert != '' && checknumber) {
     resultFinal = valueInsert * 0.0000049
     $answer.textContent =
@@ -32,7 +32,7 @@ function clickButton(event) {
       valueInsert +
       ' é equivalente à ' +
       resultFinal +
-      ' Bitcoins'
+      ' BTC'
   } else {
     $answer.textContent = 'Favor digitar um valor válido'
   }
